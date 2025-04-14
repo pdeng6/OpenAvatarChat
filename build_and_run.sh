@@ -15,7 +15,9 @@ done
 echo "${CONFIG_PATH}"
 
 docker build \
-     -t open-avatar-chat:0.0.1 . 
+    --build-arg HTTP_PROXY="http://proxy-prc.intel.com:913" \
+    --build-arg "HTTPS_PROXY=http://proxy-prc.intel.com:913" \
+    -t open-avatar-chat:0.0.1 .
 docker run --rm --gpus all -it --name open-avatar-chat \
     -v `pwd`/build:/root/open-avatar-chat/build \
     -v `pwd`/models:/root/open-avatar-chat/models \
