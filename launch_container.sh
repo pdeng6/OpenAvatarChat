@@ -12,5 +12,6 @@ docker run --rm -it --name open-avatar-chat \
     -v `pwd`/config:/root/open-avatar-chat/config \
     -v `pwd`/app:/root/open-avatar-chat/app \
     -p 8282:8282 \
+    -p 8888:8888    \
     --entrypoint bash \
     open-avatar-chat:0.0.1
